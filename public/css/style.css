@@ -22,7 +22,8 @@ body {
 /* Navbar */
 .navbar {
     height: 5rem;
-    background-color: white;
+    /* background-color: white; */
+    background-color: #ebebeb;
 }
 
 .fa-compass {
@@ -140,3 +141,4 @@ body {
     padding-left: 0;
     padding-right: 0;
 }
+
