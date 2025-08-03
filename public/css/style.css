@@ -37,7 +37,7 @@ body {
 
 .nav-wan {
     color: #222222 !important;
-    font-size: 30px !important;
+    font-size: 2rem !important;
     margin-bottom: 10px !important;
     font-weight: 300 !important;
     transition: color 0.3s ease, transform 0.3s ease !important;
