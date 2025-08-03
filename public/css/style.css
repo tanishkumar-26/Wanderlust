@@ -35,7 +35,15 @@ body {
     color: #222222 !important;
 }
 
-
+.nav-wan {
+    color: #222222 !important;
+    font-size: 30px !important;
+    margin-bottom: 10px !important;
+    font-weight: 300 !important;
+    transition: color 0.3s ease, transform 0.3s ease !important;
+    cursor: pointer !important;
+    text-decoration: none;
+}
 
 /* footer */
 
