@@ -45,6 +45,11 @@ body {
     text-decoration: none;
 }
 
+.nav-wan:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(94, 75, 1, 0.7);
+}
+
 /* footer */
 
 .f-info {
