@@ -1,61 +1,101 @@
 <style>
-  .search-btn {
-    background-color: #fe424d;
-    color: white;
-    border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+  @media (max-width: 576px) {
+  .navbar-collapse {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
   }
 
-  .search-btn:hover {
-    background-color: #fe424d;
-    color: white;
+  .navbar-nav .nav-link {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
   }
 
-  .search-btn i {
-    display: inline;
-    margin-right: 0.5rem;
-    font-size: 1rem;
+  .search-form {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    width: 100%;
   }
 
- 
+  .search-btn {
+    width: 100%;
+  }
+}
 
+ .highlight-btn {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #ff5a5f, #fc6076, #ff9a44);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+  }
+
+  .highlight-btn:hover {
+    background-image: linear-gradient(to right, #ff5a5f, #fc6076, #ff9a44), linear-gradient(to right, #ff5a5f, #fc6076, #ff9a44);
+    color: white;
+  }
+
+  .search-btn{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .search-btn:hover{
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 0.9rem;
+  }
 </style>
-<nav class="navbar navbar-expand-md
-   bg-body-light border-bottom sticky-top">
+
+
+<nav class="navbar navbar-expand-sm bg-white border-bottom sticky-top shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler"
-       type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-compass"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse"
-     id="navbarNavAltMarkup">
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-wan" href="/listings">WanderLust</a>
+        <a class="nav-link" href="/listings">WanderLust</a>
       </div>
 
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input 
-          class="form-control me-2 search-inp" 
-          type="search" 
-          placeholder="Search Destinations" 
-          />
-          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        <form class="d-flex search-form" role="search">
+          <input class="form-control search-inp me-2" type="search" placeholder="Search destination" />
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
         </form>
       </div>
 
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Become a Host</a>
-        <% if(!currUser){ %>
-          <a class="nav-link " href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/listings/new">List Your Hotel</a>
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
           <a class="nav-link" href="/login"><b>Log in</b></a>
-        <% } %> <% if(currUser) { %>
+        <% } else { %>
           <a class="nav-link" href="/logout"><b>Log out</b></a>
         <% } %>
       </div>
